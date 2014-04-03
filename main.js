@@ -54,7 +54,7 @@ function preload() {
         },
         audio: {
             flap: ['assets/flap.wav'],
-            score: ['assets/score.wav'],
+            score: ['assets/flap.wav'],
             hurt: ['assets/hurt.wav']
         }
     };
@@ -186,8 +186,8 @@ function reset() {
     gameOver = false;
     score = 0;
     credits.renderable = true;
-    scoreText.setText("DON'T\nTOUCH\nMY\nBIRDIE");
-    instText.setText("TOUCH TO FLAP\nBIRDIE WINGS");
+    scoreText.setText("Jada,\nFlappy Lars\nruler!");
+    instText.setText("Trykk på Lars");
     gameOverText.renderable = false;
     birdie.body.allowGravity = false;
     birdie.angle = 0;
@@ -295,7 +295,7 @@ function addScore(_, inv) {
 
 function setGameOver() {
     gameOver = true;
-    instText.setText("TOUCH BIRDIE\nTO TRY AGAIN");
+    instText.setText("Trykk på Lars\nfor å prøve igjen");
     instText.renderable = true;
     var hiscore = window.localStorage.getItem('hiscore');
     hiscore = hiscore ? hiscore : score;
